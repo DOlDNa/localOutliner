@@ -14,3 +14,9 @@
 アーカイブでバックアップ可
 
 複数のタイトルを作成可
+
+## 使い方
+* ダウンロードした圧縮ファイルを展開します。
+* 展開された localOutliner フォルダを XAMPP for Linux または Docker ([lapi](https://github.com/DOlDNa/lapi)) の htdocs に保存します。
+* ブラウザで http://localhost/localOutliner にアクセスします。
+* 作成した記事やバックアップは localOutliner フォルダ内に保存されます。
