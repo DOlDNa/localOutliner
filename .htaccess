@@ -1,5 +1,7 @@
+Header unset ETag
+AddOutputFilterByType DEFLATE text/plain
 RewriteEngine on
-RewriteRule ^([^/]*)/del/last$ ?folder=$1&last=1 [L]
+RewriteRule ^([^/]*)/recover/(\d{10})$ ?folder=$1&recover=$2 [L]
 RewriteRule ^([^/]*)/del/([^/]*)$ ?folder=$1&del=$2 [L]
 RewriteRule ^([^/]*)/del$ ?del=$1 [L]
 RewriteRule ^([^/]*)/backup$ ?folder=$1&backup=1 [L]
