@@ -12,6 +12,7 @@ $replace_character = ['\u005c', '\u0022', '\u002f', '\n'];
 $folder = !filter_has_var(INPUT_GET, 'folder') ? '' : str_replace($disallow_symbols, $replace_symbols, filter_input(INPUT_GET, 'folder'));
 $del = !filter_has_var(INPUT_GET, 'del') ? '' : basename(filter_input(INPUT_GET, 'del'));
 $del_chapter = !filter_has_var(INPUT_POST, 'del') ? '' : json_decode(filter_input(INPUT_POST, 'del'));
+$l = 0;
 if ($glob_folder = glob('*', GLOB_ONLYDIR|GLOB_NOSORT)) usort($glob_folder, function ($a, $b) {return filemtime($b) - filemtime($a);});
 $title[0] = basename($folder ?? $glob_folder[0] ?: $title[0]);
 if (filter_has_var(INPUT_GET, 'backup'))
@@ -96,7 +97,6 @@ if (is_array($del_chapter))
 if ($fglob)
 {
 	$i = 1;
-	$l = 0;
 	foreach ($fglob as $file)
 	{
 		if (is_file($file))
